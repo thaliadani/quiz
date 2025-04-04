@@ -1,6 +1,5 @@
 // PARTE 1: Lista de perguntas e respostas
 
-
 // PARTE 2: Pegando os elementos do HTML
 const perguntaElemento = document.querySelector(".pergunta");
 const respostasElemento = document.querySelector(".respostas");
@@ -22,21 +21,18 @@ function carregarPergunta() {
   respostasElemento.innerHTML = ""; // Limpa as respostas anteriores
 
   // Percorre todas as respostas da pergunta atual
-  for (let i = 0; i < perguntaAtual.respostas.length; i++) {
-    // Pega a resposta atual com base no índice 'i'
-    const resposta = perguntaAtual.respostas[i];
-    // Cria um novo elemento 'button' (botão)
-    const botao = document.createElement("button");
-    // Adiciona a classe CSS 'botao-resposta' ao botão para estilizar
-    botao.classList.add("botao-resposta");
-    // Define o texto do botão com a opção de resposta (resposta.opcao)
-    botao.innerText = resposta.opcao;
-    // Adiciona um evento de clique no botão
-    botao.onclick = function () {
-      // Se a resposta for correta (resposta.correto === true), incrementa o número de acertos
+  for (const resposta of perguntaAtual.respostas) {
+    // Cria um botão para a resposta atual
+    const button = document.createElement("button");
+    // Adiciona a classe CSS 'botao-resposta' ao botão para estilização
+    button.classList.add("botao-resposta");
+    // Define o texto do botão com a opção da resposta (resposta.opcao)
+    button.innerText = resposta.opcao;
+    // Adiciona um evento de clique ao botão
+    button.onclick = function () {
+      // Se a resposta estiver correta (resposta.correto === true), incrementa o contador de acertos
       if (resposta.correto) {
-        acertos = acertos + 1;
-        acertos++; // Incrementa o contador de acertos
+        acertos++;
       }
 
       // Avança para a próxima pergunta
@@ -51,8 +47,8 @@ function carregarPergunta() {
       }
     };
 
-    // Adiciona o botão de resposta à tela, dentro do elemento 'respostasElemento'
-    respostasElemento.appendChild(botao);
+    // Adiciona o botão da resposta na tela, dentro do elemento 'respostasElemento'
+    respostasElemento.appendChild(button);
   }
 }
 
