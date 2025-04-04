@@ -1,4 +1,43 @@
 // PARTE 1: Lista de perguntas e respostas
+perguntas = [
+  {
+    pergunta: "Qual é a capital do Brasil?",
+    respostas: [
+      { opcao: "Brasília", correto: true },
+      { opcao: "Rio de Janeiro", correto: false },
+      { opcao: "São Paulo", correto: false },
+      { opcao: "Salvador", correto: false },
+    ],
+  },
+  {
+    pergunta: "Quantos estados tem o Brasil?",
+    respostas: [
+      { opcao: "26", correto: false },
+      { opcao: "27", correto: true },
+      { opcao: "25", correto: false },
+      { opcao: "28", correto: false },
+    ],
+  },
+    {
+        pergunta: "Qual é o maior país do mundo?",
+        respostas: [
+        { opcao: "Brasil", correto: false },
+        { opcao: "Rússia", correto: true },
+        { opcao: "Canadá", correto: false },
+        { opcao: "China", correto: false },
+        ],
+    },
+    {
+        pergunta: "Qual é o continente mais populoso?",
+        respostas: [
+        { opcao: "África", correto: false },
+        { opcao: "América do Norte", correto: false },
+        { opcao: "Ásia", correto: true },
+        { opcao: "Europa", correto: false },
+        ],
+    },
+
+];
 
 // PARTE 2: Pegando os elementos do HTML
 const perguntaElemento = document.querySelector(".pergunta");
